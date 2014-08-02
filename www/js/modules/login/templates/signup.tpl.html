@@ -1,0 +1,44 @@
+<ion-view class="fdtd-bg signin slide-left-right" animation="slide-left-right">
+    <ion-nav-buttons side="left">
+        <button data-ui-sref="login.signin" class="button button-fdtd button-clear">Sign in</button>
+    </ion-nav-buttons>
+    <ion-content class="has-header signup-content">
+        <h3>Sign up to <b>FDTD</b></h3>
+        
+        <form class="name_send" method="post">
+            <div class="list signup-form">
+              <label class="item item-input">
+                <span class="input-label">Username</span>
+                <input type="text" ng-model="loginUser.pseudo" placeholder="Set your username" required>
+              </label>
+              <label class="item item-input">
+                <span class="input-label">Email</span>
+                <input type="email" ng-model="loginUser.email" placeholder="Set your email" required>
+              </label>
+              <label class="item item-input">
+                <span class="input-label">Password</span>
+                <input type="password" ng-model="loginUser.password" placeholder="Set a password" required>
+              </label>
+              <label class="item item-input">
+                <span class="input-label">Birthday</span>
+                <input type="date" ng-model="loginUser.birthdate" placeholder="Set a your birthday" required>
+              </label>
+            </div>
+            <ul class="list signup-list">
+              <li class="item item-toggle">
+                 I certify to be of age and I accept the <a data-ui-sref="fdtd.termsandprivacy"><u>Terms & Privacy</u></a>
+                 <label class="toggle toggle-balanced">
+                   <input type="checkbox" checked required>
+                   <div class="track">
+                     <div class="handle"></div>
+                   </div>
+                 </label>
+              </li>
+            </ul>
+            <button type="submit" ng-click="signUp(loginUser)" class="button button-fdtd-full button-green margintop margin-bottom">
+                Sign up
+            </button>
+            <div class="clearfix"></div>
+        </form>
+    </ion-content>
+</ion-view>

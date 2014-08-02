@@ -1,0 +1,115 @@
+<ion-view hide-back-button="true">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" ng-click="menuAnimationScale()" class="button button-icon icon ion-navicon button-menu"><span class="icon-with-menu icon-activity"></span></button>
+    </ion-nav-buttons>
+
+    <ion-nav-buttons side="right">
+        <button class="icon-camera"></button>
+    </ion-nav-buttons>
+
+    <ion-content class="has-header">
+        <article class="notification" ng-repeat="activity in activities track by activity._id" bindonce>
+            <a data-ui-sref="fdtd.user-profile" class="user-pic">
+                <img src="{{ user.image }}">
+            </a>
+            <div class="message" ng-if="activity.type == 'phat'">
+                <p>
+                    <a data-ui-sref="fdtd.user-profile" class="user" bo-text="activity.emiter.pseudo"></a> <a>gave a phat to your photo</a>
+                    <span bo-text="activity.age"></span>
+                </p>
+                <figure>
+                    <a>
+                        <img bo-src="activity.emiter.image">
+                    </a>
+                </figure>
+            </div>
+            <div class="message" ng-if="activity.type == 'follow'">
+                <p>
+                    <a data-ui-sref="fdtd.user-profile" class="user" bo-text="activity.emiter.pseudo"></a> <a>follow you</a>
+                    <span bo-text="activity.age"> ago</span>
+                </p>
+                <figure>
+                    <a>
+                        <img bo-src="activity.emiter.image">
+                    </a>
+                </figure>
+            </div>
+
+            <div class="clearfix"></div>
+        </article>
+
+
+    	<!--<article class="notification">
+    		<a data-ui-sref="fdtd.user-profile" class="user-pic">
+    			<img src="img/profile-pic.jpg">
+    		</a>
+    		<div class="message">
+    			<p>	
+    				<a data-ui-sref="fdtd.user-profile" class="user">Pipih13</a> <a>gave a phat to your photo</a>
+    				<span>3 min ago</span>
+    			</p>
+    			<figure>
+    				<a>
+    				<img src="https://s3.amazonaws.com/ChoozForMeBucket/5328baf3ab4e0e020000002d_0_resize.jpg">
+    				</a>
+    			</figure>
+    		</div>
+    		<div class="clearfix"></div>
+    	</article>
+    	
+    	<article class="notification">
+    		<a data-ui-sref="fdtd.user-profile" class="user-pic">
+    			<img src="img/profile-pic.jpg">
+    		</a>
+    		<div class="message">
+    			<p>	
+    				<a data-ui-sref="fdtd.user-profile" class="user">Pipih13</a> <a>gave a phat to your photo</a>
+    				<span>3 min ago</span>
+    			</p>
+    			<figure>
+    				<a>
+    				<img src="https://s3.amazonaws.com/ChoozForMeBucket/5328baf3ab4e0e020000002d_0_resize.jpg">
+    				</a>
+    			</figure>
+    		</div>
+    		<div class="clearfix"></div>
+    	</article>
+
+        <article class="notification demand">
+            <a data-ui-sref="fdtd.user-profile" class="user-pic">
+                <img src="img/profile-pic.jpg">
+            </a>
+            <div class="message">
+                <p> 
+                    <a data-ui-sref="fdtd.user-profile" class="user">Pipih13</a> <a>want to follow you</a>
+                </p>
+                <div class="clearfix"></div>    
+                <ul class="yes-no">
+                    <li><button class="yes"><span class="icon-check"></span>Accept</button></li>
+                    <li><button class="no"><span class="icon-no"></span>Decline</button></li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </article>
+
+        <article class="notification">
+            <a data-ui-sref="fdtd.user-profile" class="user-pic">
+                <img src="img/profile-pic.jpg">
+            </a>
+            <div class="message">
+                <p> 
+                    <a data-ui-sref="fdtd.user-profile" class="user">Pipih13</a> <a>gave a phat to your photo</a>
+                    <span>3 min ago</span>
+                </p>
+                <figure>
+                    <a>
+                    <img src="https://s3.amazonaws.com/ChoozForMeBucket/5328baf3ab4e0e020000002d_0_resize.jpg">
+                    </a>
+                </figure>
+            </div>
+            <div class="clearfix"></div>
+        </article>-->
+
+
+    </ion-content>
+</ion-view>

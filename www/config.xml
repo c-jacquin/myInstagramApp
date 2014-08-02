@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.ionicframework.starter" version="0.0.1" xmlns:android = "http://schemas.android.com/apk/res/android" xmlns="http://www.w3.org/ns/widgets" xmlns:gap = "http://phonegap.com/ns/1.0"  xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Break</name>
+    <description>
+        An Ionic Framework and Cordova project.
+    </description>
+    <author email="hi@ionicframework" href="http://ionicframework.com/">
+        Ionic Framework Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="orientation" value="portrait" /> <!-- all: default means both landscape and portrait are enabled -->
+    <preference name="fullscreen" value="true" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="UIWebViewBounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="BackgroundColor" value="#000000"/>
+    <preference name="KeyboardShrinksView" value="true"/>
+
+    <gap:plugin name="org.apache.cordova.geolocation" />
+    <gap:plugin name="org.apache.cordova.file" />
+    <gap:plugin name="com.phonegap.plugin.statusbar" />
+    <gap:plugin name="org.apache.cordova.camera" />
+    <gap:plugin name="org.apache.cordova.device" />
+    <gap:plugin name="org.apache.cordova.splashscreen"/>
+    <gap:plugin name="nl.x-services.plugins.socialsharing" version="4.0.6" />
+    <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.1.1" />
+
+    <icon src="images/app/ios/AppIcon72x72@2x.png" />
+
+    <icon src="images/app/ios/AppIcon72x72@2x.png" gap:platform="android" gap:density="ldpi" />
+    <icon src="images/app/ios/AppIcon72x72@2x.png" gap:platform="android" gap:density="mdpi" />
+    <icon src="images/app/ios/AppIcon72x72@2x.png" gap:platform="android" gap:density="hdpi" />
+    <icon src="images/app/ios/AppIcon72x72@2x.png" gap:platform="android" gap:density="xhdpi" />
+    <icon src="images/app/ios/AppIcon72x72@2x.png" gap:platform="blackberry" />
+    <icon src="images/app/ios/AppIcon72x72@2x.png" gap:platform="blackberry" gap:state="hover"/>
+    <icon src="images/app/ios/AppIcon29x29@2x.png" gap:platform="ios" width="57" height="57" />
+    <icon src="images/app/ios/AppIcon72x72.png" gap:platform="ios" width="72" height="72" />
+    <icon src="images/app/ios/AppIcon114x114n.png" gap:platform="ios" width="114" height="114" />
+    <icon src="images/app/ios/AppIcon72x72@2x.png" gap:platform="ios" width="144" height="144" />
+    <icon src="images/app/ios/AppIcon72x72@2x.png" gap:platform="webos" />
+    <icon src="images/app/ios/AppIcon72x72@2x.png" gap:platform="winphone" />
+    <icon src="images/app/ios/AppIcon72x72@2x.png" gap:platform="winphone" gap:role="background" />
+
+    <!-- Define app splash screen for each platform. -->
+    <gap:splash src="images/app/android/android-ldpi.png" gap:platform="android" gap:density="ldpi" />
+    <gap:splash src="images/app/android/android-mdpi.png" gap:platform="android" gap:density="mdpi" />
+    <gap:splash src="images/app/android/android-hdpi.png" gap:platform="android" gap:density="hdpi" />
+    <gap:splash src="images/app/android/android-xhdpi.png" gap:platform="android" gap:density="xhdpi" />
+    <gap:splash src="images/app/blackberry/profile_splash.png" gap:platform="blackberry" />
+    <gap:splash src="images/app/ios/FDTD-iphone-320x480.png" gap:platform="ios" width="320" height="480" />
+    <gap:splash src="images/app/ios/FDTD-iphone4.png" gap:platform="ios" width="640" height="960" />
+    <gap:splash src="images/app/ios/FDTD-iphone5.png" gap:platform="ios" width="640" height="1136" />
+    <gap:splash src="images/app/ios/profile_splash_2x.png" gap:platform="winphone" />
+
+</widget>

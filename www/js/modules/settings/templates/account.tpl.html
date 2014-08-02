@@ -1,0 +1,59 @@
+<ion-view class="black-bg">
+    <!-- <ion-nav-buttons side="left">
+        <button ui-sref="fdtd.settings" class="button button-icon icon ion-arrow-left-c"></button>
+    </ion-nav-buttons> -->
+    <ion-nav-buttons side="right">
+        <button class="icon-camera"></button>
+    </ion-nav-buttons>
+
+  <ion-content class="has-header title-content">
+    <div class="list account-setting-form margintop">
+      <label class="item item-input">
+        <span class="input-label">Username</span>
+        <input type="text" ng-model="user.pseudo" placeholder="" disabled="disabled">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Email</span>
+        <input type="email" ng-model="user.email" placeholder="kirill@washere.com" disabled="disabled">
+      </label>
+      <p>For security reasons, it is currently not possible to change the username or email for an existing account.</p>
+      <label class="item item-input">
+        <span class="input-label">Password</span>
+        <input type="password" ng-model="user.password" placeholder="" disabled="disabled">
+      </label>
+      <a ng-click="resetPassword()">Reset my password</a>
+    </div>
+
+    <ul class="list account-setting-list">
+      <li class="item item-toggle">
+         Photo roll saving</a>
+         <label class="toggle toggle-energized">
+           <input type="checkbox" checked ng-model="rollSave" ng-change="togglePhotoRoll(rollSave)">
+           <div class="track">
+             <div class="handle"></div>
+           </div>
+         </label>
+      </li>
+      <li class="item item-toggle">
+         Private profile</a>
+         <label class="toggle toggle-energized">
+           <input type="checkbox" checked>
+           <div class="track">
+             <div class="handle"></div>
+           </div>
+         </label>
+      </li>
+      <p>Enable private profile to approve followers requests. Your actual followers will not be affected.</p>
+    </ul>
+    <button ng-click="disconnect()" class="button button-fdtd-full button-red margin-bottom">
+            Logout
+    </button>
+    <div class="clearfix"></div>
+  </ion-content>
+</ion-view>
+
+<script id="password-template.html" type="text/ng-template">
+    <input ng-model="password.old" class="input-pwd" type="text" placeholder="Old password" ng-change="checkPassword(password.old)">
+    <span ng-show="wrongPass" ng-class="{ 'form-error' : wrongPass }">!</span>
+    <input ng-model="password.new" class="input-pwd" type="text" placeholder="Password">
+</script>

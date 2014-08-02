@@ -1,0 +1,18 @@
+<div class="bar bar-subsubheader item-input-inset searchform-fdtd">
+    <form ng-submit="search(query.param)">
+        <label class="item-input-wrapper">
+            <i class="icon ion-ios7-search placeholder-icon"></i>
+            <input type="search" placeholder="Search by pseudo" ng-model="query.param">
+        </label>
+    </form>
+</div>
+<ion-content class="has-subsubheader">
+    <div class="search" ng-repeat="user in users track by user._id" bindonce>
+        <a class="user-pic">
+            <img bo-src="user.image" ng-click="displayProfile(user._id)"/>
+        </a>
+        <div class="message">
+            <p style="margin-bottom: 13px; padding-top: 18px;" bo-text="user.pseudo"></p>
+        </div>
+    </div>
+</ion-content>

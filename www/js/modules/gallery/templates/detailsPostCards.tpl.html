@@ -1,0 +1,36 @@
+<ion-view no-drag-right hide-title>
+    <ion-content class="no-header black-bg" scroll="false">
+        <card-view dataset="cards" effect="rotate" direction="horizontal" reverse="true"   on-create="onCreate($cardview)" template="'cards.html'" no-scroll></card-view>
+        <script type="text/ng-template" id="cards.html">
+            <div style="background-image:url({{card.images}});" class="card-image" ng-controller="CardCtrl">
+                <div class="informations slide-down" ng-show="displayInfos == card._id" style="padding: 6.4rem 15% 4rem 9%;">
+                    <!--<button class="icon icon-close" ng-click="back()">
+                    </button>-->
+                    <div class="infos">
+                        <h3 class="description">{{ card.description }}</h3>
+                        <p class="by">By
+                            <a ng-href="#/fdtd/user-profile/{{card.creator._id}}" ng-if="$scope.user._id != card.creator._id"><b >{{card.creator.pseudo}}</b></a>
+                            <b ng-click="displayMyProfile()" ng-if="$scope.user._id == card.creator._id">{{card.creator.pseudo}}</b>
+                        </p>
+                        <p class="time">{{ age }}</p>
+                    </div>
+                </div>
+                <div class="hide-information" ng-click="showInfo(card._id)"></div>
+                <div class="actions slide-top" ng-show="displayInfos == card._id">
+                    <div class="vote-tools">
+                        <a href="javascript:void(0)" ng-click="phatIt(card)" class="vote-like" ng-class="{ active : isPhatted }">PHAT</a>
+
+                        <a href="javascript:void(0)" class="icon icon-trash vote-plus" ng-if="user.pseudo == post.creator.pseudo" ng-click="deletePost(card)"></a>
+                        <a href="javascript:void(0)" class="icon icon-report vote-plus" ng-if="user.pseudo != post.creator.pseudo" ng-click="reportPost(card)"></a>
+                    </div>
+
+                    <div class="vote-info">
+                        <p data-translate data-translate-values="{nbVotes: post.nb_votes}">
+                            <b>{{ card.phats.length || 0}}</b> phats
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </script>
+    </ion-content>
+</ion-view>

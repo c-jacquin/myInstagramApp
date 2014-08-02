@@ -1,0 +1,51 @@
+<ion-side-menus>
+
+    <ion-pane ion-side-menu-content ng-class="{ activeMenu : activeMenu }">
+        <ion-nav-bar class="bar-fdtd nav-title-slide-ios7" ui-route="/fdtd/details" ng-class="{ 'hide-navbar' : $uiRoute }">
+            <ion-nav-back-button class="button-icon">
+                <i class="icon ion-arrow-left-c"></i>
+            </ion-nav-back-button>
+
+            <h1 ng-if="time.isNight()" class="title timer" id="countdown"
+                ng-style="{color: countdown.color}" class="h1 title"><span class="icon-sunshine"></span>{{countdown.time | date:'HH:mm:ss'}} </h1>
+            <h1 ng-if="time.isDay()" class="title timer" id="countdown"
+                ng-style="{color: countdown.color}" class="h1 title"><span class="icon-moon"></span>{{countdown.time | date:'HH:mm:ss'}} </h1>
+        </ion-nav-bar>
+
+        <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+    </ion-pane>
+
+    <ion-side-menu side="left">
+        <ion-content class="center-menu">
+            <nav class="menu-nav">
+                <a nav-clear menu-close href="#/fdtd/profile" class="links-profile">
+                    <div class="img-container" style="background: url('{{ user.image || 'img/user_blank.png' }}') no-repeat center center; background-size: cover;-webkit-background-size: cover;">
+                    </div>
+                    <div class="name-container">
+                        <p>{{ user.pseudo }}</p>
+                        <span>View Profile</span>
+                    </div>
+                </a>
+                <div class="clearfix"></div>
+                <ul class="links">
+                    <li><a nav-clear menu-close href="#/fdtd/gallery/featured" ui-route="/fdtd/gallery" ng-class="{ actived: $uiRoute }">
+                        <span class="icon-now"></span> Home
+                    </a></li>
+                    <li><a nav-clear menu-close href="#/fdtd/activity" ui-route="/fdtd/activity" ng-class="{ actived: $uiRoute }">
+                        <span class="icon-activity"></span> Activity <b class="nb-activity">3</b>
+                    </a></li>
+                    <li><a nav-clear menu-close href="#/fdtd/search/user" ui-route="/fdtd/search" ng-class="{ actived: $uiRoute }">
+                        <span class="icon-loupe"></span> Search
+                    </a></li>
+                    <li><a nav-clear menu-close href="#/fdtd/settings" ui-route="/fdtd/settings" ng-class="{ actived: $uiRoute }">
+                        <span class="icon-settings"></span> Settings
+                    </a></li>
+                    <li><a><button onclick="window.plugins.socialsharing.share('Discover FDTD, the first social network dedicated to Nightlife. Show the world how you have fun and remember, what happens on FDTD stays on FDTD', null, null, 'http://www.fdtd.co')">
+                        <span class="icon-invitation"></span> Invite friends</button>
+                    </a></li>
+                </ul>
+            </nav>
+        </ion-content>
+    </ion-side-menu>
+
+</ion-side-menus>

@@ -1,0 +1,84 @@
+<ion-view class="black-bg">
+    <ion-nav-buttons side="right">
+        <button class="button button-fdtd button-clear" ng-click="updateUser(user)">Save</button>
+    </ion-nav-buttons>
+    
+  <ion-content class="has-header title-content">
+          <div class="list profile-informations">
+    		<span class="item item-avatar" ng-click="profilePicChange()">
+          <div class="img-container"  style="background: url('{{ user.image || 'img/user_blank.png' }}') no-repeat center center; background-size: cover;-webkit-background-size: cover;">
+          </div>
+                <h2>Your profile picture</h2>
+                <p>Click to change</p>
+            </span>
+          <label class="item item-icon-left">
+              <i class="icon ion-ios7-information"></i>
+              <input type="text" value="" placeholder="Add a description" ng-model="user.description"/>
+          </label>
+          <label class="item item-icon-left">
+              <i class="icon ion-link"></i>
+              <input type="text"  placeholder="Add a link (http://)" ng-model="user.url">
+
+          </label>
+
+          <div class="item item-divider">
+              Private informations
+          </div>
+          <label class="item item-icon-left">
+              <i class="icon icon-gender"></i>
+              <select value="" placeholder="Gender" ng-model="user.gender" ng-placeholder="Male">
+                  <option value="" disabled selected>Select your gender</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Other</option>
+              </select>
+
+          </label>
+          <label class="item item-icon-left">
+              <i class="icon icon-id-card"></i>
+              <input value="" ng-model="user.age" disabled="disabled">
+          </label>
+          <label class="item item-icon-left">
+              <i class="icon icon-relationship"></i>
+              <select value="" placeholder="Sexual orientation" ng-model="user.sexualOrientation">
+                  <option value="" disabled selected>Select your sexual orientation</option>
+                  <option>Hetero</option>
+                  <option>Lesbian</option>
+                  <option>Trans</option>
+              </select>
+          </label>
+          <label class="item item-icon-left">
+              <i class="icon ion-ios7-heart"></i>
+              <select value="" placeholder="Relationship" ng-model="user.relationship">
+                  <option value="" disabled selected>Select your relationship</option>
+                  <option>Single</option>
+                  <option>In a relationship</option>
+                  <option>in a relationship but...</option>
+              </select>
+          </label>
+          <label class="item item-icon-left item-icon-right">
+              <i class="icon ion-location"></i>
+              <input value="" placeholder="Your city" ng-model="user.city">
+              <!--<i class="icon ion-ios7-refresh-empty"></i>-->
+          </label>
+          <label class="item item-icon-left">
+              <i class="icon ion-wineglass"></i>
+              <input value="" placeholder="Your favorite cocktail" ng-model="user.cocktail">
+          </label>
+          <label class="item item-icon-left">
+              <i class="icon ion-music-note"></i>
+              <input value="" placeholder="Your favorite music" ng-model="user.music">
+          </label>
+          <label class="item item-icon-left">
+              <i class="icon icon-location-heart"></i>
+              <input value="" placeholder="Your favorite place" ng-model="user.place">
+          </label>
+
+      </div>
+
+  </ion-content>
+</ion-view>
+<script id="popup-template.html" type="text/ng-template">
+    <img src="{{ dataURI }}" width="100%">
+    <i class="ion-loading-c" style="font-size:2rem; color:white;" ng-if="uploading"></i>
+</script>

@@ -1,0 +1,39 @@
+<div class="modal" ng-controller="PreviewCtrl">
+
+    <a class="bar bar-footer bar-green" ng-click="publish(image)">
+      <b class="title">Publish</b>
+    </a>
+    <div class="delete-sunrise">
+        <ul class="list">
+          <li class="item item-toggle">
+             Delete on sunrise
+             <label class="toggle toggle-balanced">
+               <input type="checkbox"  ng-model="image.deleteSunrise">
+               <div class="track">
+                 <div class="handle"></div>
+               </div>
+             </label>
+          </li>
+        </ul>
+    </div>
+    <div class="bar bar-fdtd">
+      <button class="button button-icon icon ion-arrow-left-c" ng-click="leavePreview()"></button>
+      <div class="h1 title">Share</div>
+    </div>
+    <ion-content class="has-header preview">
+            <section class="preview-inner">
+                    <div class="informations">
+                        <div class="infos">
+                            <h3 class="description">
+                              <textarea rows="6" cols="30" placeholder="Add a description" autofocus ng-model="image.description">
+                                #FDTD
+                              </textarea>
+                            </h3>
+                        </div>
+                    </div>
+            </section>
+            <div class="img-container" full-height>
+              <img src="{{ 'data:image/jpeg;base64,'+image.previewPic }}" alt=""/> 
+            </div>
+    </ion-content>
+</div>

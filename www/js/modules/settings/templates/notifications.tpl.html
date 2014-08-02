@@ -1,0 +1,51 @@
+<ion-view class="black-bg">
+    <!-- <ion-nav-buttons side="left">
+        <button ui-sref="fdtd.settings" class="button button-icon icon ion-arrow-left-c"></button>
+    </ion-nav-buttons> -->
+    <ion-nav-buttons side="right">
+        <button class="icon-camera"></button>
+    </ion-nav-buttons>
+
+  <ion-content class="has-header title-content"> 
+    <ul class="list account-setting-list">
+      <li class="item item-toggle">
+         Sunset coming</a>
+         <label class="toggle toggle-energized">
+           <input type="checkbox" checked ng-model="notif.sunset" ng-change="updateNotif(notif)">
+           <div class="track">
+             <div class="handle"></div>
+           </div>
+         </label>
+      </li>
+      <li class="item item-toggle">
+         Sunrise coming</a>
+         <label class="toggle toggle-energized">
+           <input type="checkbox" checked ng-model="notif.sunrise" ng-change="updateNotif(notif)">
+           <div class="track">
+             <div class="handle"></div>
+           </div>
+         </label>
+      </li>
+      <li class="item item-toggle">
+         Someone following me</a>
+         <label class="toggle toggle-energized" ng-model="notif.follow" ng-change="updateNotif(notif)">
+           <input type="checkbox" checked>
+           <div class="track">
+             <div class="handle"></div>
+           </div>
+         </label>
+      </li>
+      <li class="item item-toggle">
+         Someone phated a picture</a>
+         <label class="toggle toggle-energized">
+           <input type="checkbox" checked ng-model="notif.phat" ng-change="updateNotif(notif)">
+           <div class="track">
+             <div class="handle"></div>
+           </div>
+         </label>
+      </li>
+    </ul>
+    <div class="clearfix"></div>
+
+  </ion-content>
+</ion-view>

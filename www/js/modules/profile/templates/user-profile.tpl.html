@@ -1,0 +1,81 @@
+<ion-view>
+
+    <!-- <ion-nav-buttons side="left">
+        <button menu-toggle="left" ng-click="menuAnimationScale()" class="button button-icon icon ion-navicon button-menu"><span class="icon-with-menu icon-user"></span></button>
+    </ion-nav-buttons> -->
+
+    <ion-nav-buttons side="right">
+        <button class="icon-camera"></button>
+    </ion-nav-buttons>
+    <ion-content class="has-header black-bg" drag-content="false">
+        <section class="profile-container">
+            <div class="bg" style="background: url('{{ user.image }}') no-repeat center center; background-size: cover;-webkit-background-size: cover;"></div>
+            <div class="img-container" style="background: url('{{ user.image || 'img/user_blank.png'}}') no-repeat center center; background-size: cover;-webkit-background-size: cover;">
+
+            </div>
+            <div class="profile-nick">
+                <h3 class="badge-vip">{{ user.pseudo }}</h3>
+                <ul class="profile-infos">
+                    <li ng-if="user.gender">
+                        {{ user.gender }} •
+                    </li>
+                    <li ng-if="user.sexualOrientation">
+                        {{ user.sexualOrientation }} •
+                    </li>
+                    <li ng-if="user.age">
+                        {{ user.age }} •
+                    </li>
+                    <li ng-if="user.relationship">
+                        Single
+                    </li>
+                </ul>
+                <span class="profile-from" ng-if="user.city">{{ user.city }}</span>
+                <ul class="mini-stats">
+                    <li><b>{{ user.phatNumber || 0}}</b> phats</li>
+                    <li><b>{{ user.nightNumber || 0}}</b> nights</li>
+                </ul>
+
+            </div>
+
+            <div class="clearfix"></div>
+            <hr>
+            <div class="profile-description">
+                <p>{{ user.description }}
+                    <a href="{{ user.url }}">{{ user.url }}</a></p>
+            </div>
+            <hr>
+            <div class="profile-stats">
+                <ul>
+                    <li><a> <!-- href="#/fdtd/followers" -->
+                        <b>{{ user.follower.length }}</b>
+                        <br>followers</a>
+                    </li>
+                    <li><a> <!-- href="#/fdtd/followers" -->
+                        <b>{{ user.following.length || 0 }}</b>
+                        <br>following</a>
+                    </li>
+                    <li><b>{{ user.postNumber || 0}}</b>
+                        <br>contents
+                    </li>
+                    <li><a ng-click="report(user)"><span class="icon-report"></span></a></li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+            <div class="btn-profile-container">
+                <button class="btn-profile followed" ng-if="followed" ng-click="unfollow(user)">Followed</button>
+                <button class="btn-profile follow" ng-if="!followed" ng-click="follow(user)">Follow</button>
+            </div>
+            <div class="clearfix"></div>
+        </section>
+        <!-- <ul class="thumbs">
+            <li class="thumb" ng-repeat="post in userPosts"
+                ng-click="openDetails({indexSelected: $index})"
+                style="background-image: url('{{post.images_small}}')">
+                <a></a>
+            </li>
+        </ul> -->
+
+    </ion-content>
+
+
+</ion-view>

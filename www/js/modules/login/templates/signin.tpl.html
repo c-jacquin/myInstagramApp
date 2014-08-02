@@ -1,0 +1,39 @@
+<ion-view class="fdtd-bg signin slide-left-right" animation="slide-left-right">
+    <ion-nav-buttons side="right">
+        <button ui-sref="login.signup" class="button button-fdtd button-clear">Sign up</button>
+    </ion-nav-buttons>
+  <ion-content class="has-header signin-content">
+      <h3 class="">Sign in</h3>
+      <form class="name_send" method="post" >
+        <div class="list">
+          <label class="item item-input-fdtd">
+
+            <input type="text" ng-model="loginUser.pseudo" placeholder="Username" required>
+          </label>
+          <label class="item item-input-fdtd">
+
+            <input type="password" ng-model="loginUser.password" placeholder="Password" required>
+          </label>
+          <span ng-if="resetedPassword">
+              {{ mess }}
+          </span>
+          <button type="submit" class="button button-fdtd-full button-green margintop" ng-click="signIn(loginUser)">
+            Sign in
+          </button>
+        </div>
+      </form>
+      <a class="forgot-pwd" ng-click="rememberMyPassword()">Forget your <b>password?</b></a>
+  </ion-content>
+</ion-view>
+<script id="password-login-template.html" type="text/ng-template">
+    <form name="resetPassword" ng-disabled="resetPassword.email.$error.email || resetPassword.email.$error.required || resetPassword.email.$pristine">
+        <input ng-model="data.email" name="email" class="input-pwd" type="email" placeholder="Enter your email" required>
+        <span class="error" ng-show="resetPassword.email.$error.required && !resetPassword.email.$pristine">
+            Required!
+        </span>
+        <span class="error" ng-show="resetPassword.email.$error.email">
+            Not valid email!
+        </span>
+    </form>
+
+</script>

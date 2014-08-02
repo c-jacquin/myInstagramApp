@@ -1,0 +1,20 @@
+<div class="modal black-bg" ng-controller="UserProfileCtrl">
+    <ion-nav-buttons side="left">
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="icon-camera"></button>
+    </ion-nav-buttons>
+    <ion-content class="has-header title-content">
+        <div class="list followers-container">
+            <a class="item item-avatar item-button-right" ng-repeat="user in followers">
+              <img src="{{ user.image }}">
+              <h2>{{ user.pseudo }}</h2>
+              <p>user.city</p>
+                <button class="button button-follow">
+                  <i class="icon icon-follow-user"></i>
+                </button>
+            </a>
+        </div>
+
+    </ion-content>
+</div>

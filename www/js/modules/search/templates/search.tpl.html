@@ -1,0 +1,21 @@
+<ion-view hide-back-button="true">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left"  class="button button-icon icon ion-navicon button-menu"><span class="icon-with-menu icon-loupe"></span></button>
+    </ion-nav-buttons>
+
+
+    <!--<ion-nav-buttons side="right">
+        <button class="icon-camera"></button>
+    </ion-nav-buttons>-->
+    <div class="bar bar-subheader subheader-fdtd">
+        <div class="button-bar">
+            <a class="button" ui-route="/fdtd/search/posts" ng-class="{ actived: $uiRoute }" href="#/fdtd/search/posts">Contents</a>
+            <a class="button" ui-route="/fdtd/search/user" ng-class="{ actived: $uiRoute }" href="#/fdtd/search/user">Users</a>
+        </div>
+    </div>
+
+    <div ui-view="search">
+
+    </div>
+
+</ion-view>

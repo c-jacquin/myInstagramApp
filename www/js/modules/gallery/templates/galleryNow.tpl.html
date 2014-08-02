@@ -1,0 +1,15 @@
+<ion-refresher
+        on-refresh="doRefresh()"
+        pulling-text=""
+        refreshing-text=""
+        refreshing-icon="ion-loading-c">
+</ion-refresher>
+<ul class="thumbs">
+    <li class="thumb"
+        ng-repeat="post in posts |  limitTo: pictureLimit  track by post._id" bindonce>
+        <img bo-src="post.images_small" ng-click="openDetails({selectedIndex: $index})"/>
+    </li>
+    <div class="clearfix"></div>
+</ul>
+<ion-infinite-scroll icon="ion-loading-c" on-infinite="loadMore()" ng-if="infinite" distance="10%">
+</ion-infinite-scroll>

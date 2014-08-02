@@ -1,0 +1,82 @@
+<ion-view hide-back-button="true">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" ng-click="menuAnimationScale()" class="button button-icon icon ion-navicon button-menu"><span class="icon-with-menu icon-user"></span></button>
+    </ion-nav-buttons>
+
+    <ion-nav-buttons side="right">
+        <button class="icon-camera"></button>
+    </ion-nav-buttons>
+
+    <ion-content class="has-header">
+        <!-- <div ng-show="isPullingToRefresh" class="pull-to-refresh icon-home slide-down" data-translate>PAGE.GALLERY.PULL_DOWN.PULL_DOWN</div> -->
+        <section class="profile-container"> 
+            <div class="bg" style="background: url('{{ user.image }}') no-repeat center center; background-size: cover;-webkit-background-size: cover;"></div>
+            <div class="img-container" style="background: url('{{ user.image || 'img/user_blank.png'}}') no-repeat center center; background-size: cover;-webkit-background-size: cover;">
+            </div>
+            <div class="profile-nick">
+                <h3 class="badge-vip" ng-class="{ active : user.badge }">{{ user.pseudo }}</h3>
+                <ul class="profile-infos">
+                    <li ng-show="user.gender">
+                        {{ user.gender }} •
+                    </li>
+                    <li ng-show="user.sexualOrientation">
+                        {{ user.sexualOrientation }} •
+                    </li>
+                    <li ng-show="user.age">
+                        {{ user.age }} years old 
+                    </li>
+                    <li ng-show="user.relationship">
+                        • {{ user.relationship }}
+                    </li>
+                </ul>
+                <span class="profile-from" ng-show="user.city">{{ user.city }}</span>
+                <ul class="mini-stats">
+                    <li><b>{{ user.phatNumber || 0}}</b> phats</li>
+                    <li> <b>{{ user.nightNumber || 0}}</b> nights</li>
+                </ul>
+                
+            </div>
+
+            <div class="clearfix"></div>
+            <hr>
+            <div class="profile-description">
+                <p>{{ user.description  || 'No  description'}}
+                <a href="user.url">{{ user.url }}</a></p>
+            </div>
+            <hr>
+            <div class="profile-stats">
+                <ul>
+                    <li><a href="#/fdtd/followers">
+                        <b>{{ user.follower.length }}</b>
+                        <br>followers</a>
+                    </li>
+                    <li><a href="#/fdtd/followers">
+                        <b>{{ user.following.length || 0 }}</b>
+                        <br>following</a>
+                    </li>
+                    <li><b>{{ user.postNumber || 0}}</b>
+                        <br>contents
+                    </li>
+                    <li><a href="#/fdtd/settings/account"><span class="icon-settings"></span></a></li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+            <div class="btn-profile-container">
+                <!-- <button class="btn-profile followed">Followed</button> -->
+                <a href="#/fdtd/change-profile">
+                <button class="btn-profile edit">Edit your profile</button>
+                </a>
+                <!-- <button class="btn-profile follow" ng-if="">Follow</button> -->
+            </div>
+            <div class="clearfix"></div>
+        </section>
+        <ul class="thumbs">
+            <li class="thumb" ng-repeat="post in posts"
+                ng-click="openDetails({indexSelected: $index})"
+                style="background-image: url('{{ post.images_small }}')">
+                <a></a>
+            </li>
+        </ul>
+
+    </ion-content>
+</ion-view>
